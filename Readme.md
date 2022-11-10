@@ -1,22 +1,26 @@
-<h1> MedPlant </h1>
+# MedPlant
 <hr/>
 
-<h2>Funcionalidade </h2>
+## Funcionalidades 
 <hr/>
+
 Apresentar aos usuarios chás, plantas e ervas.
 
-<h2>Tecnologias</h2>
+## Tecnologias
 <hr/>
+
 -JavaScript
 -HTML
 -CSS
+-PHP
 -MySQL
 -Svelte
 
-<h2>Contribuintes </h2>
+## Contribuintes 
 </hr>
-- Isaac Luiz
-- Jacilene de Lima
-- Valdir Kehrle
-- Victor Antônio
-- Williane Felix
+
+- <a href="https://github.com/IsaacLuiz88"> Isaac Luiz </a>
+- <a href="https://github.com/jacilima"> Jacilene de Lima </a>
+- <a href="https://github.com/Kehrle"> Valdir Kehrle </a>
+- <a href="https://github.com/victor16042002"> Victor Antônio </a>
+- <a href="https://github.com/willyfelix"> Williane Felix </a>   
