@@ -3,7 +3,8 @@
 
 ## Funcionalidades 
 
-Apresentar aos usuarios chás, plantas e ervas.
+Cadastro de usuário, Cadastro de plantas e ervas medicinais, Consulta no banco de dados apresentando aos usuarios plantas e/ou ervas medicinais cujo seu uso diminua/acabe com os sintomas apresentados pelo usuário na busca.
+*Apresentar aos usuarios chás, plantas e ervas.
 
 ## Tecnologias
 
