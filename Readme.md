@@ -16,7 +16,7 @@ Cadastro de usuário, Cadastro de plantas e ervas medicinais, Consulta no banco 
 - MySQL
 - Svelte
 
-## Contribuintes 
+## Desenvolvedores 
 
 - <a href="https://github.com/IsaacLuiz88"> Isaac Luiz </a>
 - <a href="https://github.com/jacilima"> Jacilene de Lima </a>
