@@ -1,23 +1,20 @@
 # MedPlant
-<hr/>
+
 
 ## Funcionalidades 
-<hr/>
 
 Apresentar aos usuarios chás, plantas e ervas.
 
 ## Tecnologias
-<hr/>
 
 -JavaScript
--HTML
--CSS
--PHP
--MySQL
--Svelte
+- HTML
+- CSS
+- PHP
+- MySQL
+- Svelte
 
 ## Contribuintes 
-</hr>
 
 - <a href="https://github.com/IsaacLuiz88"> Isaac Luiz </a>
 - <a href="https://github.com/jacilima"> Jacilene de Lima </a>
