@@ -1,4 +1,4 @@
-# MedPlant
+# MedPlan
 
 
 ## Funcionalidades 
