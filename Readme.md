@@ -3,9 +3,9 @@
 
 ## Funcionalidades 
 
-Cadastro de usuário, Cadastro de plantas e ervas medicinais, Consulta no banco de dados apresentando aos usuarios plantas e/ou ervas medicinais cujo seu uso diminua/acabe com os sintomas apresentados pelo usuário na busca.
+Cadastro de usuário, Cadastro de plantas e ervas medicinais, Consulta no banco de dados apresentando aos usuários plantas e/ou ervas medicinais cujo seu uso diminua/acabe com os sintomas apresentados pelo usuário na busca.
 <br><br>
-<sub/>Apresentar aos usuarios chás, plantas e ervas.
+<sub/>Apresentar aos usuários chás, plantas e ervas.
 
 ## Tecnologias
 
