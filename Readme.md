@@ -1,7 +1,7 @@
 # MedPlant
 
 
-## Funcionalidades 
+## Funcionalidade
 
 Cadastro de usuário, Cadastro de plantas e ervas medicinais, Consulta no banco de dados apresentando aos usuários de plantas e/ou ervas medicinais cujo seu objetivo/uso diminua ou acabe com os sintomas apresentados pelo usuário na busca.
 <br><br>
