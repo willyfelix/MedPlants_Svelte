@@ -1,5 +1,5 @@
 <script>
-    import { currentUser, ursinhos } from '../stores'
+    import { currentUser, ursinhos } from '../assets/js/stores'
 
     let form = {
         nome: ''

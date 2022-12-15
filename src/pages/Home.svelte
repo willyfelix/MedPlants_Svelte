@@ -1,6 +1,6 @@
 <script>
 import Logado from './Logado.svelte';
-import { page, users, currentUser } from "../stores";
+import { page, users, currentUser } from "../assets/js/stores";
 
 function changePage(v) {
   page.update(() => v);

@@ -1,10 +1,10 @@
 <script>
   // import svelteLogo from './assets/svelte.svg'
   // import Counter from './lib/Counter.svelte'
-  import Home from './lib/Home.svelte';
-  import Login from './lib/Login.svelte';
-  import Register from './lib/Register.svelte';
-  import { page, currentUser } from './stores';
+  import Home from './Home.svelte';
+  import Login from './Login.svelte';
+  import Register from './Register.svelte';
+  import { page, currentUser } from '../assets/js/stores';
   
   function logout() {
     $currentUser = false;
