@@ -1,6 +1,4 @@
 <script>
-  // import svelteLogo from './assets/svelte.svg'
-  // import Counter from './lib/Counter.svelte'
   import Home from './Home.svelte';
   import Login from './Login.svelte';
   import Register from './Register.svelte';
@@ -12,9 +10,9 @@
 
 </script>
 
-<main>
+<main id="principal">
   ({$currentUser})
-  <h1> ({$page})</h1>
+  <h1> ({$page})</h1>  
   {#if $page == 'home'}
     <Home />
   {:else if !$currentUser && $page == 'login'}

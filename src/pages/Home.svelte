@@ -12,7 +12,7 @@ function changePage(v) {
 // })
 
 </script>
-<h2>Home</h2>
+<img id="profile-img" class="profile-img-card" alt="logo" src="/images/logo.png" />
 {#if !$currentUser}
   <button on:click={() => changePage('login')}>
     Login
