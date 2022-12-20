@@ -45,6 +45,8 @@ function registrar() {
 
     //Input CPF
 
+    
+    //ALERT
     function funcaoalerta() {
         alert("Senhas não conferem!")
     }

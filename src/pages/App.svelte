@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/app.css"/>
+
 <script>
   import Home from './Home.svelte';
   import Login from './Login.svelte';
