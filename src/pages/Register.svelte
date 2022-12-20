@@ -85,14 +85,14 @@ function registrar() {
             <div id="remember" class="checkbox">
             
             </div>
-            <button class="btn btn-lg btn-primary btn-block btn-signin btn-sucess mt-3" type="submit">Cadastrar</button>
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Cadastrar</button>
 
+            <button class="btn btn-lg btn-primary btn-block btn-signin mt-5" on:click={() => changePage('home')}>Voltar</button>
         </form><!-- /form -->
     </div><!-- /card-container -->
 </div><!-- /container -->
 
 
 
-<button on:click={() => changePage('home')}>Voltar</button>
 
 
