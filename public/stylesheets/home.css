@@ -14,7 +14,7 @@
 }
 .flex {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
 }
 
 .card-container.card {
@@ -34,6 +34,10 @@
 /*
  * Card component
  */
+.container{
+    padding: 15px 10em 0;
+ }
+
 .card {
     background-color: #0807074c;
     /* just in case there no content*/
