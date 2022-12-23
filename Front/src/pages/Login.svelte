@@ -32,7 +32,6 @@
     <div class="card card-container">
         <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
         <img id="profile-img" class="profile-img-card" alt="logo" src="/images/logo.png" />
-        <p id="profile-name" class="profile-name-card"></p>
         <form class="form-signin" on:submit|preventDefault={logar}>
             <span id="reauth-email" class="reauth-email"></span>
             <input type="text" id="inputEmail" class="form-control" bind:value={email}  placeholder="Email" required autofocus>
@@ -43,9 +42,9 @@
                 </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
+            <button class="btn btn-primary btn-signin" on:click={() => changePage('home')}>Voltar</button>
         </form><!-- /form -->
     </div><!-- /card-container -->
 </div><!-- /container -->
 
-<button on:click={() => changePage('home')}>Voltar</button>
 

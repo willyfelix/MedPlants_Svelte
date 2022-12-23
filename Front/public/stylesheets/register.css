@@ -2,7 +2,11 @@
 .card-container.card {
     padding: 2em 2em;
 }
+h2 {
+    color: aliceblue;
+    font-weight: bold;
 
+}
 .btn {
     font-weight: 700;
     height: 36px;
@@ -21,7 +25,7 @@
     margin-top: 50px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
-    border-radius: 2px;
+    border-radius: 15px;
     -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
@@ -33,8 +37,6 @@
     margin: 0 auto 10px;
     display: block;
 }
-
-
  /*
  * Form styles
  */
@@ -45,21 +47,11 @@
     margin: 10px 0 0;
     min-height: 1em;
 }
-
-.reauth-email {
-    display: block;
-    color: #404040;
-    line-height: 2;
-    margin-bottom: 10px;
-    font-size: 14px;
-    text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}/*
+.row {
+	/*max-width: 400px;*/
+	margin: 0 auto;
+	display: flex;
+}
 .form-signin #inputNome,
 .form-signin #inputSobrenome,
 .form-signin #inputDataNasc,
@@ -70,20 +62,37 @@
     direction: ltr;
     height: 44px;
     font-size: 16px;
-}*/
-
-.form-signin input[type=email],
-.form-signin input[type=password],
+}
 .form-signin input[type=text],
-.form-signin button {
-    width: 100%;
-    display: block;
+.form-signin input[type=date],
+.form-signin input[type=text] {
+    width: 50%;
     margin-bottom: 10px;
     z-index: 1;
-    position: relative;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+}
+.item {
+	/* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
+	flex: 1;
+	margin: 5px;
+	font-size: 1em;
+}
+
+.form-signin input[type=email]{
+    width: 100%;
+}
+.form-signin input[type=password],
+.form-signin select,
+.form-signin button {
+    width: 45%;
+    margin-bottom: 10px;
+   /* z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box*/
 }
 
 .form-signin .form-control:focus {
