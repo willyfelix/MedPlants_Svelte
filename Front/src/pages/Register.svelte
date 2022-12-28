@@ -11,11 +11,9 @@ let password
 let password2
 let perguntasec
 let respostasec
-
 function changePage(v) {
     page.update(() => v);
 }
-
 function registrar() {
     users.update(users => users.concat({
         nome,
@@ -30,7 +28,6 @@ function registrar() {
     }))
     changePage('home');
 }
-
  // Input Pergunta Secreta   
     
     let placeholder = 'Pegunta Secreta:';
@@ -39,71 +36,104 @@ function registrar() {
 		{ id: 2, text: `Qual o primeiro nome da sua mãe?` },
 		{ id: 3, text: `Qual nome do seu animal?` }
 	];
-
     let selectedValue = "";
     let answer ='';
-
     //Input CPF
-
     
     //ALERT
     function funcaoalerta() {
         alert("Senhas não conferem!")
     }
-
 </script>
 
 <div class="container">
-    <div class="card card-container">
-        <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+    <div class="card">
         <img id="profile-img" class="profile-img-card" alt="logo" src="/images/logo.png" />
-            <div class="py-5 text-center">
-              <h2>Formulário de Registro</h2>
-            </div>
+
+        <div class="my-5 text-center">
+            <h2>Formulário de Registro</h2>
+        </div>
+        
         <form class="form-signin" on:submit|preventDefault={registrar}>
-            <section class="row">
-                <input type="text" id="inputNome" pattern="([a-zA-Z]+)" class="item form-control" bind:value={nome} placeholder="Nome" required autofocus>
-                <input type="text" id="inputSobrenome" class="item form-control" bind:value={sobrenome} placeholder="Sobrenome" required>
-            </section>
+            <div class="row mb-2">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" bind:value={nome} placeholder="Digite seu nome" required autofocus pattern="([a-zA-Z]+)" >
+                </div>
+            </div>
 
-            <section class="row">
-                <input type="date" id="inputDataNasc" class="item form-control mb-2" bind:value={datanasc} placeholder="Data de Nascimento" required>
-                <input type="text" id="inputCPF" name="cpf" class="item form-control" bind:value={cpf} placeholder="CPF" required>
-            </section>
+            <div class="row mb-2">
+                <div class="col-sm-12">
+                  <input type="text" class="form-control" bind:value={sobrenome} placeholder="Digite seu sobrenome" required>
+                </div>
+            </div>
 
-            <input type="text" id="inputEmail" class="item form-control" bind:value={email} placeholder="exemplo@exemplo.com" required autofocus>
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <input type="date" id="inputDataNasc" class="item form-control mb-2" bind:value={datanasc} placeholder="Data de Nascimento" required>
+                </div>
 
-            <section class="row"> 
-                <select id="inputPergunta" class="item form-control" bind:value={selectedValue}>            
-                    {#if placeholder}
-                    <option value="" disabled selected>{placeholder}</option>
-                    {/if}
-                    {#each questions as question}
-                    <option value={question.text}>
-                        {question.text || question.text}
-                    </option>
-                    {/each}
-                </select>
-                <input type="text" id="inputResposta" class="item form-control" bind:value={answer} placeholder="Resposta Secreta" required>
-            </section>
+                <div class="col-sm-6">
+                    <input type="text" id="inputCPF" name="cpf" class="item form-control" bind:value={cpf} placeholder="CPF" required>
+                </div>
+            </div>
 
-            
-            <section class="row">
-                <input type="password" id="inputPassword" class="grow1 item form-control" bind:value={password} placeholder="Senha" required>
-                <input type="password" id="inputPassword2" class="grow1 item form-control" bind:value={password2} placeholder="Confirme sua senha" required>
+            <div class="row mb-2">
+                <div class="col-sm-12">
+                    <input type="text" id="inputEmail" class="item form-control" bind:value={email} placeholder="exemplo@exemplo.com" required autofocus>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-sm-12">
+                    <select id="inputPergunta" class="form-control" bind:value={selectedValue}>            
+                        {#if placeholder}
+                            <option value="" disabled selected>{placeholder}</option>
+                        {/if}
+
+                        {#each questions as question}
+                            <option value={question.text}>
+                                {question.text || question.text}
+                            </option>
+                        {/each}
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-sm-12">
+                    <input type="text" id="inputResposta" class="item form-control" bind:value={answer} placeholder="Resposta Secreta" required>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <input type="password" id="inputPassword" class="grow1 item form-control" bind:value={password} placeholder="Senha" required>
+                </div>
+
+                <div class="col-sm-6">
+                    <input type="password" id="inputPassword2" class="grow1 item form-control" bind:value={password2} placeholder="Confirme sua senha" required>
+                </div>
+            </div>
+
+            <div class="row mb-2">
                 {#if password != '' && password != password2}
-                <!--- funcaoalerta  -->
+                    <div class="col-sm-12 mb-2">
+                        <!--- funcaoalerta  -->
+                    </div>
                 {/if}
-            </section>
+            </div>
 
-            <button class="btn btn-lg btn-primary btn-block btn-signin mt-5" type="submit">Cadastrar</button>
-            <button class="btn btn-lg btn-primary btn-block btn-signin mt-5" on:click={() => changePage('home')}>Voltar</button>
+            <div class="row">
+                <div class="col-md-12">
+                    <button class="btn btn-success btn-block mt-2" type="submit">Cadastrar</button>
+                </div>
+                <div class="col-md-12">
+                    <button class="btn btn-outline-secondary btn-block mt-2" on:click={() => changePage('home')}>Voltar</button>
+                </div>
+            </div>
 
         </form><!-- /form -->
+
+        
     </div><!-- /card-container -->
 </div><!-- /container -->
-
-
-
-
-

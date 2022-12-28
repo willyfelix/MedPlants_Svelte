@@ -1,10 +1,3 @@
-.principal{
-    color: rgb(179, 215, 177);
-    text-align: center;
-    height: 2em;
-    margin-bottom: 1em;
-    font-family: Georgia, 'Times New Roman', Times, serif, Tahoma, Geneva, Verdana, sans-serif;
-}
 .subtitulo {
     color: rgb(237, 237, 237);
     font-style: oblique;
@@ -12,39 +5,19 @@
     font-size: 15px;
     text-align: center;
 }
-.flex {
-    display: flex;
-    flex-direction: column;
-}
-
-.card-container.card {
-    max-width: 100px;
-    padding: 15em;
-}
-
-.btn {
-    font-weight: 700;
-    height: 36px;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    cursor: default;
-}
 
 /*
  * Card component
  */
 .container{
     padding: 15px 10em 0;
- }
+}
 
 .card {
+    max-width: 80rem;
     background-color: #0807074c;
-    /* just in case there no content*/
     padding: 20px 25px 30px;
     margin: 5px 0 auto;
-    /*margin-top: 50px;*/
-    /* shadows and rounded borders */
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border-radius: 15px;
@@ -55,48 +28,10 @@
 
 .profile-img-card {
     width: 18em;
-    height: 15em;
     margin: 0 auto 10px;
     display: block;
 }
 
-/*
- * Form styles
- */
-.profile-name-card {
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    margin: 10px 0 0;
-    min-height: 1em;
-}
-
-.btn.btn-signin {
-    /*background-color: #4d90fe; */
-    background-color: rgb(35, 160, 49);
-    /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
-    padding: 0px;
-    font-weight: 700;
-    font-size: 16px;
-    height: 36px;
-    width: 15em;
-    align-items: center;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    border: none;
-    -o-transition: all 0.218s;
-    -moz-transition: all 0.218s;
-    -webkit-transition: all 0.218s;
-    transition: all 0.218s;
-}
-
-.btn.btn-signin:hover,
-.btn.btn-signin:active,
-.btn.btn-signin:focus {
-    background-color: rgb(12, 97, 33);
-}
-
-.btn.btn-signin {
-    margin-top: 20px;
+.width {
+    width: 200px;
 }

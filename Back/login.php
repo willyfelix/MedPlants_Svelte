@@ -1,12 +1,12 @@
 <?php
     require 'main.php';
 
-    $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare('SELECT * FROM users WHERE username = :user AND password = :pw');
+    $stmt = $conn->prepare('SELECT * FROM users WHERE email = :email AND password = :pw');
     $stmt->execute([
-        'user' => $username, 
+        'email' => $email, 
         'pw' => $password
     ]);
 
