@@ -2,8 +2,8 @@
     header('Access-Control-Allow-Origin: http://localhost:5173');
     header('Access-Control-Allow-Credentials: true');
 
-    $dsn = 'mysql:dbname=web1tsi;host=127.0.0.1;port=3307';
-    $conn = new PDO($dsn, 'root', 'root');
+    $dsn = 'mysql:dbname=medplants;host=127.0.0.1;port=3306'; 
+    $conn = new PDO($dsn, 'root', '');
 
     session_start();
 ?>

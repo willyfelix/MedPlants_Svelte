@@ -1,28 +1,28 @@
 <link rel="stylesheet" type="text/css" href="/stylesheets/login.css"/>
 
 <script>
-    import { page, users, currentUser } from '../assets/js/stores';
+    import { page, logado } from '../assets/js/stores';
     let email, password
     function changePage(v) {
         page.update(() => v);
     }
-    function logar() {
-        // let user = $users.find(function(u) {
-        //     return u.username == username && u.password == password;
-        // })
-        let user = null;
-        for (let i = 0; i < $users.length; i++) {
-            if ($users[i].email == email && $users[i].password == password) {
-                user = $users[i];
-                break;
-            }
+
+    async function logar() {
+        const data = new FormData();
+        data.append("email", email);
+        data.append("password", password);
+
+        const response = await fetch("http://localhost:8000/login.php", {
+            method: "POST",
+            body: data,
+            credentials: "include",
+        });
+        if (!response.ok) {
+            alert("Usuário ou senha incorreto");
+            return;
         }
-        if (!user) {
-            alert('usuário não encontrado')
-            return
-        }
-        $currentUser = user
-        $page = 'home'
+        $logado = true;
+        $page = "home";
     }
 </script>
 
@@ -32,7 +32,7 @@
 
         <form class="form-signin" on:submit|preventDefault={logar}>
             <span id="reauth-email" class="reauth-email"></span>
-            <input type="text" id="inputEmail" class="form-control" bind:value={email}  placeholder="Email" required>
+            <input type="text" id="inputEmail" class="form-control" bind:value={email} placeholder="Email" required>
             <input type="password" id="inputPassword" class="form-control" bind:value={password} placeholder="Senha" required>
             <div id="remember" class="checkbox">
                 <label>
