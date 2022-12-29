@@ -2,7 +2,7 @@
 
 <script>
 import Logado from './Logado.svelte';
-import { page, users, currentUser } from "../assets/js/stores";
+import { page, logado } from "../assets/js/stores";
 function changePage(v) {
   page.update(() => v);
 }
@@ -16,7 +16,7 @@ function changePage(v) {
 
     <h3 class="subtitulo">Seu site para busca de ervas medicinais </h3>
     
-    {#if !$currentUser}
+    {#if !$logado}
       <div class="row text-center mt-5">
         <div class="col-sm-12">
           <button class="btn btn-lg btn-primary width" on:click={() => changePage('login')}>

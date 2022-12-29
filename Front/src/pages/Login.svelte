@@ -12,7 +12,7 @@
         data.append("email", email);
         data.append("password", password);
 
-        const response = await fetch("http://localhost:8000/login.php", {
+        const response = await fetch("http://localhost:8001/login.php", {
             method: "POST",
             body: data,
             credentials: "include",

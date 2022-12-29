@@ -1,16 +1,16 @@
 <link rel="stylesheet" type="text/css" href="/stylesheets/register.css">
 
 <script>
-import { page, users } from "../assets/js/stores";
+import { page, users, logado } from "../assets/js/stores";
 let nome
 let sobrenome
-let datanasc
+let dataNascimento
 let cpf
 let email
 let password
 let password2
-let perguntasec
-let respostasec
+let perguntaSecreta
+let respostaSecreta
 function changePage(v) {
     page.update(() => v);
 }
@@ -18,13 +18,13 @@ function registrar() {
     users.update(users => users.concat({
         nome,
         sobrenome,
-        datanasc,
+        dataNascimento,
         cpf,
         email,
         password,
         password2,
-        perguntasec,
-        respostasec
+        perguntaSecreta,
+        respostaSecreta
     }))
     changePage('home');
 }
@@ -38,7 +38,31 @@ function registrar() {
 	];
     let selectedValue = "";
     let answer ='';
-    //Input CPF
+    
+    async function cadastrar() {
+        const data = new FormData();
+        data.append("nome", nome);
+        data.append("sobrenome", sobrenome);
+        data.append("dataNascimento", dataNascimento);
+        data.append("cpf", cpf);
+        data.append("email", email);
+        data.append("preguntaSecreta", perguntaSecreta);
+        data.append("respostaSecreta", respostaSecreta);
+        data.append("password", password);
+        data.append("password2", password2);
+
+        const response = await fetch("http://localhost:8001/cadastrar.php", {
+            method: "POST",
+            body: data,
+            credentials: "include",
+        });
+        if (!response.ok) {
+            alert("Usuário ou senha incorreto");
+            return;
+        }
+        $logado = true;
+        $page = "home";
+    }
     
     //ALERT
     function funcaoalerta() {
@@ -69,7 +93,7 @@ function registrar() {
 
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <input type="date" id="inputDataNasc" class="item form-control mb-2" bind:value={datanasc} placeholder="Data de Nascimento" required>
+                    <input type="date" id="inputDataNasc" class="item form-control mb-2" bind:value={dataNascimento} placeholder="Data de Nascimento" required>
                 </div>
 
                 <div class="col-sm-6">
