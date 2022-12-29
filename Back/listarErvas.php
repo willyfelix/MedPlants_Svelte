@@ -1,13 +1,15 @@
 <?php
-    include 'main.php';
+    require 'main.php';
 
     if (!isset($_SESSION['user'])) {
         http_response_code(401);
         exit();
     }
 
-    $stmt = $conn->query('SELECT * FROM cards WHERE user_id = ' . $_SESSION['user']['id']);
+    $stmt = $conn->query('SELECT * FROM ervas');
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     echo json_encode($data);
+
+
 ?>

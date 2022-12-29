@@ -1,41 +1,43 @@
 <script>
-  import Home from "./Home.svelte";
-  import Login from "./Login.svelte";
-  import Register from "./Register.svelte";
-  import { page, logado } from "../assets/js/stores";
   import { onMount } from "svelte";
 
-  onMount(async () => {  
+  import { page, logado, usuario } from "../assets/js/stores";
+  
+  import Login from "./Login.svelte";
+  import Register from "./Register.svelte";
+
+  import Navbar from "./Navbar.svelte";
+  import Ervas from "./Ervas.svelte";  
+  import CadastrarErva from "./CadastrarErva.svelte";
+
+  onMount(async () => {
     const response = await fetch("http://localhost:8001/logado.php", {
       credentials: "include",
     });
+
     if (response.ok) {
       $logado = true;
-    } else {
-      $logado = false;
+      $usuario = await response.json();
+      console.log($usuario)
     }
   });
-  function logout() {
-    $logado = false;
-  }
-
 </script>
 
 <link rel="stylesheet" type="text/css" href="/stylesheets/app.css" />
 
 <main id="principal">
-  {#if $page == "home"}
-    <Home />
-  {:else if !$logado && $page == "login"}
-    <Login />
-  {:else if !$logado && $page == "register"}
-    <Register />
+
+  {#if $logado === true}
+    <Navbar />
   {/if}
 
-  {#if $logado}
-    <button on:click={logout}>logout</button>
+  {#if $page === "login"}
+    <Login />
+  {:else if $page === "register"}
+    <Register />
+  {:else if $page === "ervas"}
+    <Ervas />
+  {:else if $page === "cadastrar-erva"}
+    <CadastrarErva />
   {/if}
 </main>
-
-<style>
-</style>

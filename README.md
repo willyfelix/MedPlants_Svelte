@@ -28,7 +28,19 @@ Cadastro de usuário, Cadastro de plantas e ervas medicinais, Consulta no banco 
 
 Siga estas etapas no seu terminal:
 
+- Para rodar o Front-end:
+
 ```
+cd Front
 npm install
 npm run dev
+
+```
+
+- Para inciar o servidor PHP (Back-end):
+
+```
+cd Back
+php -S localhost:8001
+
 ```

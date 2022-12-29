@@ -1,24 +1,19 @@
 import { writable } from "svelte/store";
 
 export const logado = writable(false);
-export const page = writable('home');
+export const page = writable("ervas");
+export const usuario = writable();
+export const ervas = writable([]);
 
-export const users = writable(
-    localStorage.getItem('users') ? 
-        JSON.parse(localStorage.getItem('users')) : 
-        []
-);
 
-export const currentUser = writable(
-    localStorage.getItem('currentUser') ? 
-        JSON.parse(localStorage.getItem('currentUser')) : 
-        []
-);
+export function changePage(v) {
+  page.update(() => v);
+}
 
-users.subscribe(value => {
-    localStorage.setItem('users', JSON.stringify(value))
-})
-
-currentUser.subscribe(value => {
-    localStorage.setItem('currentUser', JSON.stringify(value))
-})
+logado.subscribe((value) => {
+  if (value) {
+    changePage("ervas");
+  } else {
+    changePage("login");
+  }
+});

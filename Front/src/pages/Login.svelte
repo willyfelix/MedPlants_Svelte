@@ -1,11 +1,9 @@
 <link rel="stylesheet" type="text/css" href="/stylesheets/login.css"/>
 
 <script>
-    import { page, logado } from '../assets/js/stores';
-    let email, password
-    function changePage(v) {
-        page.update(() => v);
-    }
+    import { page, logado, changePage, usuario } from '../assets/js/stores';
+    
+    let email, password;
 
     async function logar() {
         const data = new FormData();
@@ -22,26 +20,22 @@
             return;
         }
         $logado = true;
-        $page = "home";
+        $page = "ervas";
+        $usuario = await response.json();
     }
 </script>
 
 <div class="container">
-    <div class="card card-container">
+    <div class="card">
         <img id="profile-img" class="profile-img-card my-5" alt="logo" src="/images/logo.png" />
 
         <form class="form-signin" on:submit|preventDefault={logar}>
             <span id="reauth-email" class="reauth-email"></span>
             <input type="text" id="inputEmail" class="form-control" bind:value={email} placeholder="Email" required>
             <input type="password" id="inputPassword" class="form-control" bind:value={password} placeholder="Senha" required>
-            <div id="remember" class="checkbox">
-                <label>
-                    <input class="checkbox" type="checkbox" value="remember-me"> Lembrar senha
-                </label>
-            </div>
-
-            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
-            <button class="btn btn-outline-secondary" on:click={() => changePage('home')}>Voltar</button>
+            
+            <button class="btn btn-success btn-block" type="submit">Entrar</button>
+            <button class="btn btn-outline-info" on:click={() => changePage('register')}>Cadastrar</button>
         </form><!-- /form -->
     </div><!-- /card-container -->
 </div><!-- /container -->

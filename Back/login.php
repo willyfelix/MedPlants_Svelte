@@ -19,5 +19,7 @@
 
     $user = $data[0];
     $_SESSION['user'] = $user;
+    echo json_encode($_SESSION['user']);
+
     http_response_code(200);
 ?>
