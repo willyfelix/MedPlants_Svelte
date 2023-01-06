@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="/stylesheets/register.css">
 
 <script>
-    import { page, logado, changePage } from "../assets/js/stores";
+    import { page, changePage } from "../assets/js/stores";
 
     let nome;
     let sobrenome;
