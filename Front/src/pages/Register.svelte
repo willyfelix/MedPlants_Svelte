@@ -2,6 +2,7 @@
 
 <script>
     import { page, changePage } from "../assets/js/stores";
+    import { ENDPOINT_CADASTRAR } from "../assets/js/endpoints";
 
     let nome;
     let sobrenome;
@@ -31,7 +32,7 @@
         data.append("password", password);
         data.append("password2", password2);
 
-        const response = await fetch("http://localhost:8001/cadastrar.php", {
+        const response = await fetch(ENDPOINT_CADASTRAR, {
             method: "POST",
             body: data,
             credentials: "include",

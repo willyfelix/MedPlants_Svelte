@@ -2,7 +2,8 @@
 
 <script>
     import { page, logado, changePage, usuario } from '../assets/js/stores';
-    
+    import { ENDPOINT_LOGIN } from '../assets/js/endpoints';
+
     let email, password;
 
     async function logar() {
@@ -10,7 +11,7 @@
         data.append("email", email);
         data.append("password", password);
 
-        const response = await fetch("http://localhost:8001/login.php", {
+        const response = await fetch(ENDPOINT_LOGIN, {
             method: "POST",
             body: data,
             credentials: "include",

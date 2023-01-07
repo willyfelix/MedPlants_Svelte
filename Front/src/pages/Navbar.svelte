@@ -2,9 +2,10 @@
 
 <script>
     import { logado, changePage, usuario } from '../assets/js/stores';
+    import { ENDPOINT_LOGOUT } from '../assets/js/endpoints';
 
     async function logout() {
-        const response = await fetch("http://localhost:8001/logout.php", {
+        const response = await fetch(ENDPOINT_LOGOUT, {
             credentials: "include",
         });
 

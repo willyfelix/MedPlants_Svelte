@@ -1,17 +1,17 @@
 <script>
   import { onMount } from "svelte";
-
+  
   import { page, logado, usuario } from "../assets/js/stores";
+  import { ENDPOINT_LOGADO } from "../assets/js/endpoints";
   
   import Login from "./Login.svelte";
   import Register from "./Register.svelte";
-
   import Navbar from "./Navbar.svelte";
   import Ervas from "./Ervas.svelte";  
   import CadastrarErva from "./CadastrarErva.svelte";
 
   onMount(async () => {
-    const response = await fetch("http://localhost:8001/logado.php", {
+    const response = await fetch(ENDPOINT_LOGADO, {
       credentials: "include",
     });
 

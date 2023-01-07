@@ -1,18 +1,43 @@
 <link rel="stylesheet" type="text/css" href="/stylesheets/ervas.css">
 
 <script>
+
   import { onMount } from "svelte";
+
+  let erva = [];
+
   import { ervas, changePage } from "../assets/js/stores";
+  import { ENDPOINT_LISTAR_ERVAS, ENDPOINT_DELETE_ERVA } from "../assets/js/endpoints";
 
   onMount(async () => {
-    const response = await fetch("http://localhost:8001/listarErvas.php", {
+    carregarErvas()
+  });
+
+  async function carregarErvas() {
+    const response = await fetch( ENDPOINT_LISTAR_ERVAS , {
       credentials: "include",
     });
 
     if (response.ok) {
       $ervas = await response.json();
     }
-  });
+  }
+
+  async function deleteErva(id) {
+    const form = new FormData();
+    form.append("id_erv", id);
+    const response = await fetch(ENDPOINT_DELETE_ERVA, {
+      method: "POST",
+      body: form,
+      credentials: "include",
+    });
+    if (!response.ok) {
+      alert("xii, algo deu errado!");
+      return;
+    }
+    carregarErvas()
+  }
+
 </script>
 
 <div class="container mt-2">
@@ -35,6 +60,7 @@
               <th>Nome popular</th>
               <th>Nome científico</th>
               <th>Indicação de uso</th>
+              <th>Ações</th>
             </tr>
           </thead>
           <tbody>
@@ -44,6 +70,9 @@
                 <td>{erva.NOME_POPULAR_ERV}</td>
                 <td>{erva.NOME_CIENTIFICO}</td>
                 <td>{erva.INDICACAO_USO_ERV}</td>
+                <td>
+                  <button class="btn btn-small btn-danger" on:click={() => deleteErva(erva.ID_ERV)}>&times;</button>
+                </td>
               </tr>
             {/each}
           </tbody>

@@ -2,6 +2,7 @@
 
 <script>
     import { page, changePage } from "../assets/js/stores";
+    import { ENDPOINT_CADASTRAR_ERVA } from "../assets/js/endpoints";
 
     let nomePopular;
     let nomeCientifico;
@@ -13,7 +14,7 @@
         data.append("nome_cientifico", nomeCientifico);
         data.append("indicacao_de_uso", indicacaoUso);
         
-        const response = await fetch("http://localhost:8001/cadastrarErva.php", {
+        const response = await fetch(ENDPOINT_CADASTRAR_ERVA, {
             method: "POST",
             body: data,
             credentials: "include",
@@ -31,7 +32,7 @@
         <form class="form-signin" on:submit|preventDefault={cadastrar}>
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <input type="text" class="form-control" bind:value={nomePopular} placeholder="Nome popular" required autofocus pattern="([a-zA-ZÀ-ú ]+)" >
+                    <input type="text" class="form-control" bind:value={nomePopular} placeholder="Nome popular" required pattern="([a-zA-ZÀ-ú ]+)" >
                 </div>
             </div>
 
@@ -43,7 +44,7 @@
 
             <div class="row mb-2">
               <div class="col-sm-12">
-                <input type="text" class="form-control" bind:value={indicacaoUso} placeholder="Indicação de uso" required>
+                <textarea class="form-control" bind:value={indicacaoUso} placeholder="Indicação de uso" required></textarea>
               </div>
             </div>
 
@@ -56,6 +57,6 @@
                 </div>
             </div>
 
-        </form><!-- /form -->
-    </div><!-- /card-container -->
-</div><!-- /container -->
+        </form>
+    </div>
+</div>
