@@ -7,7 +7,7 @@
   let erva = [];
 
   import { ervas, changePage } from "../assets/js/stores";
-  import { ENDPOINT_LISTAR_ERVAS, ENDPOINT_DELETE_ERVA } from "../assets/js/endpoints";
+  import { ENDPOINT_LISTAR_ERVAS, ENDPOINT_DELETE_ERVA, ENDPOINT_ATUALIZAR_ERVA } from "../assets/js/endpoints";
 
   onMount(async () => {
     carregarErvas()
@@ -27,6 +27,21 @@
     const form = new FormData();
     form.append("id_erv", id);
     const response = await fetch(ENDPOINT_DELETE_ERVA, {
+      method: "POST",
+      body: form,
+      credentials: "include",
+    });
+    if (!response.ok) {
+      alert("xii, algo deu errado!");
+      return;
+    }
+    carregarErvas()
+  }
+
+  async function atualizarErva(id) {
+    const form = new FormData();
+    form.append("id_erv", id);
+    const response = await fetch(ENDPOINT_ATUALIZAR_ERVA, {
       method: "POST",
       body: form,
       credentials: "include",
@@ -72,6 +87,9 @@
                 <td>{erva.INDICACAO_USO_ERV}</td>
                 <td>
                   <button class="btn btn-small btn-danger" on:click={() => deleteErva(erva.ID_ERV)}>&times;</button>
+                </td>
+                <td>
+                  <button class="btn btn-small btn-sucess" on:click={() => atualizarErva(erva.INDICACAO_USO_ERV)}>&raquo;</button>
                 </td>
               </tr>
             {/each}
