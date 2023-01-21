@@ -4,7 +4,7 @@ export const logado = writable(false);
 export const page = writable("ervas");
 export const usuario = writable();
 export const ervas = writable([]);
-
+export const ervaAtual = writable();
 
 export function changePage(v) {
   page.update(() => v);

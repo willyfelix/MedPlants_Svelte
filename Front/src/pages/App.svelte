@@ -9,6 +9,7 @@
   import Navbar from "./Navbar.svelte";
   import Ervas from "./Ervas.svelte";  
   import CadastrarErva from "./CadastrarErva.svelte";
+  import AtualizarErva from "./AtualizarErva.svelte";
 
   onMount(async () => {
     const response = await fetch(ENDPOINT_LOGADO, {
@@ -39,5 +40,7 @@
     <Ervas />
   {:else if $page === "cadastrar-erva"}
     <CadastrarErva />
+  {:else if $page === "atualizar-erva"}
+    <AtualizarErva />
   {/if}
 </main>

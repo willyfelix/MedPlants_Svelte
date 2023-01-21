@@ -4,10 +4,8 @@
 
   import { onMount } from "svelte";
 
-  let erva = [];
-
-  import { ervas, changePage } from "../assets/js/stores";
-  import { ENDPOINT_LISTAR_ERVAS, ENDPOINT_DELETE_ERVA, ENDPOINT_ATUALIZAR_ERVA } from "../assets/js/endpoints";
+  import { ervas, changePage, ervaAtual } from "../assets/js/stores";
+  import { ENDPOINT_LISTAR_ERVAS, ENDPOINT_DELETE_ERVA} from "../assets/js/endpoints";
 
   onMount(async () => {
     carregarErvas()
@@ -21,6 +19,11 @@
     if (response.ok) {
       $ervas = await response.json();
     }
+  }
+
+  function mudarPagina (erva) {
+    $ervaAtual = erva; 
+    changePage("atualizar-erva");
   }
 
   async function deleteErva(id) {
@@ -38,20 +41,6 @@
     carregarErvas()
   }
 
-  async function atualizarErva(id) {
-    const form = new FormData();
-    form.append("id_erv", id);
-    const response = await fetch(ENDPOINT_ATUALIZAR_ERVA, {
-      method: "POST",
-      body: form,
-      credentials: "include",
-    });
-    if (!response.ok) {
-      alert("xii, algo deu errado!");
-      return;
-    }
-    carregarErvas()
-  }
 
 </script>
 
@@ -75,6 +64,8 @@
               <th>Nome popular</th>
               <th>Nome científico</th>
               <th>Indicação de uso</th>
+              <th>Contra indicação</th>
+              <th>Propriedades</th>
               <th>Ações</th>
             </tr>
           </thead>
@@ -85,11 +76,14 @@
                 <td>{erva.NOME_POPULAR_ERV}</td>
                 <td>{erva.NOME_CIENTIFICO}</td>
                 <td>{erva.INDICACAO_USO_ERV}</td>
+                <td>{erva.CONTRA_INDICACAO_ERV}</td>
+                <td>{erva.PROPRIEDADES_ERV}</td>
                 <td>
                   <button class="btn btn-small btn-danger" on:click={() => deleteErva(erva.ID_ERV)}>&times;</button>
+                  <button class="btn btn-small btn-sucess" on:click={() => mudarPagina(erva)}> &#9998;
+                  </button>
                 </td>
                 <td>
-                  <button class="btn btn-small btn-sucess" on:click={() => atualizarErva(erva.INDICACAO_USO_ERV)}>&raquo;</button>
                 </td>
               </tr>
             {/each}
