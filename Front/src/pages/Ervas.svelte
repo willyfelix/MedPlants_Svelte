@@ -70,9 +70,9 @@
             </tr>
           </thead>
           <tbody>
-            {#each $ervas as erva }
+            {#each $ervas as erva, i }
               <tr>
-                <td>{erva.ID_ERV}</td>
+                <td>{i+1}</td>
                 <td>{erva.NOME_POPULAR_ERV}</td>
                 <td>{erva.NOME_CIENTIFICO}</td>
                 <td>{erva.INDICACAO_USO_ERV}</td>

@@ -1,4 +1,5 @@
 <script>
+
   import { onMount } from "svelte";
   
   import { page, logado, usuario } from "../assets/js/stores";
@@ -10,6 +11,8 @@
   import Ervas from "./Ervas.svelte";  
   import CadastrarErva from "./CadastrarErva.svelte";
   import AtualizarErva from "./AtualizarErva.svelte";
+  import PreLoading from "./PreLoading.svelte";
+
 
   onMount(async () => {
     const response = await fetch(ENDPOINT_LOGADO, {
@@ -31,6 +34,8 @@
   {#if $logado === true}
     <Navbar />
   {/if}
+
+  <PreLoading />
 
   {#if $page === "login"}
     <Login />
