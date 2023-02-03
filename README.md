@@ -7,14 +7,17 @@ Cadastro de usuário, Cadastro de plantas e ervas medicinais, Consulta no banco 
 <br><br>
 <sub/>Apresentar aos usuários chás, plantas e ervas.
 
-## Tecnologias
+## Ferramentas e Tecnologias 
 
-- JavaScript
-- HTML
-- CSS
-- PHP
-- MySQL
-- Svelte
+<div style="display: inline_block">
+  <img align="center" width="40" height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original-wordmark.svg"/>
+  <img align="center" width="30" height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+  <img align="center" width="30" height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+  <img align="center" width="30" height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
+  <img align="center" width="40" height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg" />
+  <img align="center" width="40" height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" />
+  <img align="center" width="30" height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"/>
+</div>
 
 ## Desenvolvedores 
 
