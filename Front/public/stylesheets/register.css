@@ -1,3 +1,8 @@
+body {
+    background: url('../images/fundoPrincipal.png');
+    background-size: 80em 62em;
+}
+
 h2 {
     color: aliceblue;
     font-weight: bold;
@@ -6,10 +11,10 @@ h2 {
  * Card component
  */
 .card {
-    max-width: 40em;
-    margin: 20px auto 25px;
-    background-color: #0807074c;
-    padding: 20px 5em 30px;
+    max-width: 40em; /*40em*/
+    margin: 20px auto 25px;/*20px auto 10px*/
+    background-color: #080707bb;
+    padding: 20px 5em 30px; /*20px 3em 20px;*/
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border-radius: 15px;

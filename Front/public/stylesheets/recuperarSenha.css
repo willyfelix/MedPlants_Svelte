@@ -4,20 +4,34 @@ h2 {
 }
 body {
     background: url('../images/fundoPrincipal.png');
-    background-size: 80em 60em;
+    background-size: 80em 62em;
+}
+
+.descricao {
+    color: rgb(179, 238, 179);
+    font-size: 18px;
+    font-family: system-ui;
+    /* padding-top: 15px; */
+
 }
 /*
  * Card component
  */
 .card {
-    max-width: 70em;
+    max-width: 35em;
+    margin: 20px auto 10px;
     background-color: #080707bb;
-    padding: 20px 15em 30px;
-    margin: 20px auto 25px;
+    padding: 20px 3em 20px; /*1em 3em 2em*/
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border-radius: 15px;
     -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+    width: 175px;
+    margin: 0 auto 10px;
+    display: block;
 }

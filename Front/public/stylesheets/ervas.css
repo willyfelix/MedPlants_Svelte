@@ -1,6 +1,11 @@
 /*
  * Card component
  */
+ body {
+    background: url('../images/fundoPrincipal.png');
+    background-size: 80em 50em;
+
+}
 
 .card {
     max-width: 80rem;

@@ -31,7 +31,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" on:click={logout}>
-                        <button class="btn btn-outline-secondary">Logout</button>
+                        <button class="btn btn-secondary">Logout</button>
                     </a>
                 </li>
             </ul>

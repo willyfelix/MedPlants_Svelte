@@ -12,6 +12,7 @@
   import CadastrarErva from "./CadastrarErva.svelte";
   import AtualizarErva from "./AtualizarErva.svelte";
   import PreLoading from "./PreLoading.svelte";
+  import RecuperarSenha from "./RecuperarSenha.svelte";
 
 
   onMount(async () => {
@@ -39,6 +40,8 @@
 
   {#if $page === "login"}
     <Login />
+  {:else if $page === "recuperar-senha"}
+    <RecuperarSenha />
   {:else if $page === "register"}
     <Register />
   {:else if $page === "ervas"}

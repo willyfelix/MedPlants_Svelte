@@ -79,11 +79,8 @@
                 <td>{erva.CONTRA_INDICACAO_ERV}</td>
                 <td>{erva.PROPRIEDADES_ERV}</td>
                 <td>
+                  <button class="btn btn-small btn-sucess" on:click={() => mudarPagina(erva)}> &#9998;</button>
                   <button class="btn btn-small btn-danger" on:click={() => deleteErva(erva.ID_ERV)}>&times;</button>
-                  <button class="btn btn-small btn-sucess" on:click={() => mudarPagina(erva)}> &#9998;
-                  </button>
-                </td>
-                <td>
                 </td>
               </tr>
             {/each}

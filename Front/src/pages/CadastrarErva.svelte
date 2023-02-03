@@ -69,7 +69,7 @@
                     <button class="btn btn-success btn-block mt-2" type="submit">Cadastrar</button>
                 </div>
                 <div class="col-md-12">
-                    <button class="btn btn-outline-secondary btn-block mt-2" on:click={() => changePage('ervas')}>Voltar</button>
+                    <button class="btn btn-secondary btn-block mt-2" on:click={() => changePage('ervas')}>Voltar</button>
                 </div>
             </div>
 
