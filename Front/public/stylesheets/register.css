@@ -7,6 +7,11 @@ h2 {
     color: aliceblue;
     font-weight: bold;
 }
+.principal {
+    color: rgb(51, 180, 51);
+    font-size: 20px;
+    font-family: Georgia;
+}
 /*
  * Card component
  */

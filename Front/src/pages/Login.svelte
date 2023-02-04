@@ -44,8 +44,14 @@
 
         <form class="form-signin" on:submit|preventDefault={logar}>
             <span id="reauth-email" class="reauth-email"></span>
-            <input type="text" id="inputEmail" class="form-control" bind:value={email} placeholder="Email" required>
-            <input type="password" id="inputPassword" class="form-control" bind:value={password} placeholder="Senha" required>
+            <div class="principal">
+                Email:
+                <input type="text" id="inputEmail" class="form-control" bind:value={email} placeholder="Email" required>
+            </div>
+            <div class="principal">
+                Senha:
+                <input type="password" id="inputPassword" class="form-control" bind:value={password} placeholder="Senha" required>
+            </div>
             <div class="d-flex align-items-center mb-3">
                 <input class="boxpasswordhide" type="checkbox" style="width: 15px" on:click={mostrarSenha}> 
                 <span class="btn">Mostrar senha</span>

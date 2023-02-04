@@ -2,6 +2,11 @@ h2 {
     color: aliceblue;
     font-weight: bold;
 }
+.principal {
+    color: rgb(51, 180, 51);
+    font-size: 20px;
+    font-family: Georgia;
+}
 body {
     background: url('../images/fundoPrincipal.png');
     background-size: 80em 60em;

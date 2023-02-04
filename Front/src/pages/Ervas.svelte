@@ -39,6 +39,7 @@
       return;
     }
     carregarErvas()
+    alert("Erva deletada com Sucesso!")
   }
 
 

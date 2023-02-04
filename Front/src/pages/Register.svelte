@@ -57,61 +57,88 @@
         <form class="form-signin" on:submit|preventDefault={cadastrar}>
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <input type="text" class="form-control" bind:value={nome} placeholder="Digite seu nome" required pattern="([a-zA-ZÀ-ú ]+)" >
+                    <div class="principal">
+                        Nome:
+                        <input type="text" class="form-control" bind:value={nome} placeholder="Digite seu nome" required pattern="([a-zA-ZÀ-ú ]+)" >
+                    </div>
                 </div>
             </div>
 
             <div class="row mb-2">
                 <div class="col-sm-12">
-                  <input type="text" class="form-control" bind:value={sobrenome} placeholder="Digite seu sobrenome" required pattern="([a-zA-ZÀ-ú ]+)">
+                    <div class="principal">
+                        Sobrenome:
+                        <input type="text" class="form-control" bind:value={sobrenome} placeholder="Digite seu sobrenome" required pattern="([a-zA-ZÀ-ú ]+)">
+                    </div>
                 </div>
             </div>
 
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <input type="date" id="inputDataNasc" class="item form-control mb-2" bind:value={dataNascimento} placeholder="Data de Nascimento" required>
+                    <div class="principal">
+                        Data de Nascimento:
+                        <input type="date" id="inputDataNasc" class="item form-control mb-2" bind:value={dataNascimento} placeholder="Data de Nascimento" required>
+                    </div>
                 </div>
 
                 <div class="col-sm-6">
-                    <input type="text" id="inputCPF" name="cpf" class="item form-control" maxlength="11" bind:value={cpf} placeholder="CPF" pattern="([0-9]+)" title="Este campo só aceita números" required>
+                    <div class="principal">
+                        CPF:
+                        <input type="text" id="inputCPF" name="cpf" class="item form-control" maxlength="11" bind:value={cpf} placeholder="CPF" pattern="([0-9]+)" title="Este campo só aceita números" required>
+                    </div>
                 </div>
             </div>
 
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <input type="text" id="inputEmail" class="item form-control" bind:value={email} placeholder="exemplo@exemplo.com" required autofocus>
+                    <div class="principal">
+                        Email:
+                        <input type="text" id="inputEmail" class="item form-control" bind:value={email} placeholder="exemplo@exemplo.com" required autofocus>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-sm-12">
+                    <div class="principal">
+                        Pergunta Secreta:
+                        <select id="inputPergunta" class="form-control" bind:value={perguntaSecreta}>            
+                            {#if placeholder}
+                                <option value="" disabled selected>{placeholder}</option>
+                            {/if}
+
+                            {#each questions as question}
+                                <option value={question.text}>
+                                    {question.text}
+                                </option>
+                            {/each}
+                        </select>
+                    </div>
                 </div>
             </div>
 
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <select id="inputPergunta" class="form-control" bind:value={perguntaSecreta}>            
-                        {#if placeholder}
-                            <option value="" disabled selected>{placeholder}</option>
-                        {/if}
-
-                        {#each questions as question}
-                            <option value={question.text}>
-                                {question.text}
-                            </option>
-                        {/each}
-                    </select>
-                </div>
-            </div>
-
-            <div class="row mb-2">
-                <div class="col-sm-12">
-                    <input type="text" id="inputResposta" class="item form-control" bind:value={respostaSecreta} placeholder="Resposta Secreta" required>
+                    <div class="principal">
+                        Resposta Secreta:
+                        <input type="text" id="inputResposta" class="item form-control" bind:value={respostaSecreta} placeholder="Resposta Secreta" required>
+                    </div>
                 </div>
             </div>
 
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <input type="password" id="inputPassword" class="grow1 item form-control" bind:value={password} placeholder="Senha" required>
+                    <div class="principal">
+                        Senha:
+                        <input type="password" id="inputPassword" class="grow1 item form-control" bind:value={password} placeholder="Senha" required>
+                    </div>
                 </div>
 
                 <div class="col-sm-6">
-                    <input type="password" id="inputPassword2" class="grow1 item form-control" bind:value={password2} placeholder="Confirme sua senha" required>
+                    <div class="principal">
+                        Confirmação de Senha:
+                        <input type="password" id="inputPassword2" class="grow1 item form-control" bind:value={password2} placeholder="Confirme sua senha" required>
+                    </div>
                 </div>
             </div>
 
