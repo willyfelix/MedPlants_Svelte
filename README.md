@@ -1,11 +1,10 @@
 # MedPlants
 
+Projeto com o intuito de apresentar plantas e/ou ervas medicinais cadastradas, cujo seu objetivo/uso diminua ou acabe com os sintomas apresentados pelo usuário que o busca.
 
 ## Funcionalidades
 
-Cadastro de usuário, Cadastro de plantas e ervas medicinais, Consulta no banco de dados apresentando aos usuários de plantas e/ou ervas medicinais cujo seu objetivo/uso diminua ou acabe com os sintomas apresentados pelo usuário na busca.
-<br><br>
-<sub/>Apresentar aos usuários chás, plantas e ervas.
+Cadastro de usuário, Cadastro de plantas e ervas medicinais, Consulta no banco de dados.
 
 ## Ferramentas e Tecnologias 
 
